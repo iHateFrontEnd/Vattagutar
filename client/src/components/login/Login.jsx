@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import configFile from '../../config.json';
 import SignUp from '../sign-up/SignUp';
 import Homepage from '../homepage/Homepage';
+import Logo from '../homepage/Logo';
 import '../../App.css';
 
 //sending username and password to server
@@ -24,19 +25,31 @@ async function login() {
     const res = await fetch(`${configFile.serverURL}/login`, options);
     const userData = await res.json();
 
-    //saving user data to local storage
-    localStorage.setItem('user', JSON.stringify({
-        username: username,
-        password: password,
-        isLoggedIn: true,
-        userIndex: userData.userIndex
-    }));
+    if(userData.status != 'failed') {
+        //saving user data to local storage
+        console.log('saving user data');
+        localStorage.setItem('user', JSON.stringify({
+            username: username,
+            password: password,
+            isLoggedIn: true,
+            userIndex: userData.userIndex,
+        }));
 
-    //saving chat data to session storage
+        console.log('saving chat data');
+        //saving chat data to local storage 
+        localStorage.setItem('chatData', JSON.stringify({
+            groups: userData.groups,
+            friends: userData.friends
+        }));
 
-    ReactDOM.render(
-        <Homepage />, document.getElementById('root')
-    );
+        ReactDOM.render(
+            <Homepage frame={Logo} />, document.getElementById('root')
+        );
+
+        window.location.reload();
+    } else {
+        alert('Incorrect username or password, please try again');
+    }
 }
 
 //rendering the sign up page

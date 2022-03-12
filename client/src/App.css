@@ -103,7 +103,7 @@ table {
 .navBarTd {
     background-image: linear-gradient(to left, #3F0DDC, #340BB9);
     height: 90vh;
-    width: 50vh;
+    width: 60vh;
     border-radius: 5vh;
     border-style: none;
 }
@@ -181,4 +181,10 @@ h3 {
 /*join group*/
 .joinGroup {
     text-align: center;
+}
+
+/*create group*/
+.createGroup {
+    text-align: center;
+    scrollbar-width: normal;
 }

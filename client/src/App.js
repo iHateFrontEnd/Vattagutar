@@ -6,16 +6,10 @@ import Logo from './components/homepage/Logo.js';
 import loadChatData from './loadChatData';
 
 function App() {
-    console.log('in app');
     try {
         const user = JSON.parse(localStorage.getItem('user'));
 
         if(user.isLoggedIn === true) {
-            loadChatData(user);
-
-            let chatData = JSON.parse(sessionStorage.getItem('chatData'));
-            console.log(chatData);
-
             return <Homepage frame={Logo} />;
         } else {
             return <Login />;

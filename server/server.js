@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 var usersFile = require('./users.json');
+var groupsFile = require('./groups.json');
 const app = express();
 app.use(express.json());
 app.use(
@@ -33,9 +34,9 @@ app.post('/login', urlencodedParser, (req, res) => {
     if(userFound == true) {
         res.json({
             status: 'success',
-            userindex: userindex,
-            friends: usersfile.users[userindex].friends,
-            groups: usersfile.users[userindex].groups
+            userIndex: userIndex,
+            friends: usersFile.users[userIndex].friends,
+            groups: usersFile.users[userIndex].groups
         });
     } else {
         res.json({
@@ -74,20 +75,58 @@ app.post('/sign-up', (req, res) => {
 app.post('/load-chat-data', (req, res) => {
     const userIndex = req.body.userIndex;
 
-    res.json({
+    const response = {
         groups: usersFile.users[userIndex].groups,
         friends: usersFile.users[userIndex].friends
-    })
+    }
+
+    res.send(response);
 });
 
 //friend request
 app.post('/friend-request', (req, res) => {
+    const fUserName = req.body.fUserName;
 
+    for(let i = 0; i <= usersFile.user.length; i++) {
+        //search users
+    }
+
+    res.end();
 });
 
 //join group
 app.post('/join-group', (req, res) => {
+    const groupName = req.body.groupName;
+
+    res.end();
 });
 
+//creates a group
+app.post('/create-group', (req, res) => {
+    console.log(req.body);
+
+    const groupName = req.body.groupName;
+    const userIndex = req.body.userIndex;
+
+    //for groups.json
+    groupsFile.groups.push(groupName);
+
+    fs.writeFile('./groups.json', JSON.stringify(groupsFile, null, 2), (err) => {
+        if(err) {
+            console.log(err);
+        }
+    });
+
+    //for users.json
+    usersFile.users[userIndex].groups.push(groupName);
+
+    fs.writeFile('./users.json', JSON.stringify(usersFile, null, 2), (err) => {
+        if(err) {
+            console.log(err);
+        }
+    });
+
+    res.end();
+});
 
 app.listen(4000);

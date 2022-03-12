@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configFile from '../../config.json';
-import CreateGroup from '../join-group/JoinGroup';
+import CreateGroup from '../create-group/CreateGroup';
 import Homepage from '../homepage/Homepage';
 import '../../App.css';
 

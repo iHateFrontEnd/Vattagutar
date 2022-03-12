@@ -1,10 +1,14 @@
 {
-    "users": [
-        {
-            "username": "rushabh",
-            "password": "000",
-            "friends": ["anna", "amma"],
-            "groups": []
-        }
-    ]
+  "users": [
+    {
+      "username": "rushabh",
+      "password": "000",
+      "friends": [
+          "amma",
+          "rushabh"
+      ],
+      "groups": [
+      ]
+    }
+  ]
 }
