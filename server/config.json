@@ -1,0 +1,16 @@
+{
+    "clientURL": "http://localhost:3000",
+    "userLayout": {
+        "username": "",
+        "password": "",
+        "friends": [],
+        "groups": [],
+        "incomingRequests": [],
+        "sentRequest": []
+    },
+    "groupChatLayout": {
+        "permittedUsers": [],
+        "requestedUsers": [],
+        "chat": []
+    }
+}

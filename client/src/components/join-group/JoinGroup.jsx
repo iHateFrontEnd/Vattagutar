@@ -9,7 +9,7 @@ import '../../App.css';
 function requestToJoin() {
     const groupName = document.getElementById('root').value;
 
-    if(groupName != '') {
+    if (groupName != '') {
 
         const options = {
             method: 'POST',

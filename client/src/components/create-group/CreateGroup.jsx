@@ -1,10 +1,15 @@
+import React, { useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import configFile from '../../config.json';
-import Logo from '../homepage/Logo';
 import Homepage from '../homepage/Homepage';
+import Logo from '../homepage/Logo';
 import '../../App.css';
 
-function createGroup() {
-    const user = JSON.parse(localStorage.getItem('user'));
+var chatData = JSON.parse(localStorage.getItem('chatData'));
+
+async function saveGroup() {
+    //posting data to server to create group 
+    var user = JSON.parse(localStorage.getItem('user'));
     const groupName = document.getElementById('groupName').value;
 
     const options = {
@@ -14,20 +19,18 @@ function createGroup() {
         },
         body: JSON.stringify({
             groupName: groupName,
-            userIndex: user.userIndex
+            userIndex: user.userIndex,
+            username: user.username
         })
     }
 
-    fetch(`${configFile.serverURL}/create-group`, options);
+    await fetch(`${configFile.serverURL}/create-group`, options);
 
-    ReactDOM.render(
-        <Homepage frame={Logo} />, document.getElementById('root')
-    );
+    //saving group to local storage
+    chatData.groups.push(groupName);
+    localStorage.setItem('chatData', JSON.stringify(chatData));
 
-    window.location.reload();
-    window.location.reload();
-    window.location.reload();
-    window.location.reload();
+    await window.location.reload();
 }
 
 const CreateGroup = (
@@ -43,8 +46,8 @@ const CreateGroup = (
         <br />
         <br />
 
-        <button className='loginBtn' onClick={createGroup}>Create</button>
-    </div>
+        <button className='loginBtn' onClick={saveGroup}>Create</button>
+    </div >
 );
 
 export default CreateGroup;

@@ -1,4 +1,5 @@
 const express = require('express');
+const router = express.Router();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const fs = require('fs');
@@ -12,121 +13,32 @@ app.use(
     })
 );
 
+//importing routes
+const loginRoute = require('./routes/login');
+const signUpRoute = require('./routes/sign-up');
+const loadChatData = require('./routes/load-chat-data');
+const friendRequest = require('./routes/add-friend');
+const joinGroup = require('./routes/join-group');
+const createGroup = require('./routes/create-group');
+
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-//allowing the user to login
-app.post('/login', urlencodedParser, (req, res) => {
-    const username = req.body.username;
-    const password = req.body.password;
-
-    var userIndex = -1;
-    var userFound = false;
-
-    for(let i = 0; i <= usersFile.users.length - 1; i++) {
-        userIndex++;
-
-        if(usersFile.users[i].username === username && usersFile.users[i].password === password) {
-            userFound = true;
-            break;
-        }
-    }
-
-    if(userFound == true) {
-        res.json({
-            status: 'success',
-            userIndex: userIndex,
-            friends: usersFile.users[userIndex].friends,
-            groups: usersFile.users[userIndex].groups
-        });
-    } else {
-        res.json({
-            status: 'failed',
-            reason: 'user not found'
-        });
-    }
-
-    res.end();
-});
+//loggin in a user
+app.use('/login', loginRoute);
 
 //creating a new user
-app.post('/sign-up', (req, res) => {
-    const username = req.body.username;
-    const password = req.body.password;
-
-    const userLayout = {
-        username: username,
-        password: password,
-        friends: [],
-        groups: []
-    }
-
-    usersFile.users.push(userLayout);
-
-    fs.writeFile('./users.json', JSON.stringify(usersFile, null, 2), (err) => {
-        if(err) {
-            console.log(err);
-        }
-    });
-
-    res.end();
-});
+app.use('/sign-up', signUpRoute);
 
 //send chat data
-app.post('/load-chat-data', (req, res) => {
-    const userIndex = req.body.userIndex;
-
-    const response = {
-        groups: usersFile.users[userIndex].groups,
-        friends: usersFile.users[userIndex].friends
-    }
-
-    res.send(response);
-});
+app.use('/load-chat-data', loadChatData);
 
 //friend request
-app.post('/friend-request', (req, res) => {
-    const fUserName = req.body.fUserName;
-
-    for(let i = 0; i <= usersFile.user.length; i++) {
-        //search users
-    }
-
-    res.end();
-});
+app.use('/friend-request', friendRequest);
 
 //join group
-app.post('/join-group', (req, res) => {
-    const groupName = req.body.groupName;
-
-    res.end();
-});
+app.use('/join-group', joinGroup);
 
 //creates a group
-app.post('/create-group', (req, res) => {
-    console.log(req.body);
-
-    const groupName = req.body.groupName;
-    const userIndex = req.body.userIndex;
-
-    //for groups.json
-    groupsFile.groups.push(groupName);
-
-    fs.writeFile('./groups.json', JSON.stringify(groupsFile, null, 2), (err) => {
-        if(err) {
-            console.log(err);
-        }
-    });
-
-    //for users.json
-    usersFile.users[userIndex].groups.push(groupName);
-
-    fs.writeFile('./users.json', JSON.stringify(usersFile, null, 2), (err) => {
-        if(err) {
-            console.log(err);
-        }
-    });
-
-    res.end();
-});
+app.use('/create-group', createGroup);
 
 app.listen(4000);

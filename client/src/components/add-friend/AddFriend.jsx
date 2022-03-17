@@ -5,27 +5,36 @@ import Logo from '../homepage/Logo';
 import Homepage from '../homepage/Homepage';
 import '../../App.css';
 
-
 //sending friend request data to server
-function sendFriendRequest() {
+async function sendFriendRequest() {
     const friendsUsername = document.getElementById('friendsUsername').value;
 
     if (friendsUsername != '') {
+        let user = JSON.parse(localStorage.getItem('user'));
+
         const options = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                friend: friendsUsername
+                fUsername: friendsUsername,
+                userIndex: user.userIndex
             })
         }
 
-        fetch(`${configFile.serverURL}/friend-request`, options);
+        const res = await fetch(`${configFile.serverURL}/friend-request`, options);
+        const isRequestSent = await res.json();
 
-        ReactDOM.render(
-            <Homepage frame={Logo} />, document.getElementById('root')
-        );
+        if (isRequestSent === true) {
+            alert('Request was sent');
+
+            ReactDOM.render(
+                <Homepage frame={Logo} />, document.getElementById('root')
+            );
+        } else {
+            alert(`There is no such user name ${friendsUsername}, please try again with a proper username`);
+        }
     } else {
         alert('Please enter a proper username');
     }

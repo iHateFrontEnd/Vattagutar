@@ -5,6 +5,7 @@ import Login from '../login/Login';
 import Logo from './Logo';
 import AddFriend from '../add-friend/AddFriend';
 import JoinGroup from '../join-group/JoinGroup';
+import TopBar from '../top-bar/TopBar';
 import '../../App.css';
 
 var groupsArr = [];
@@ -26,13 +27,13 @@ function renderChatData() {
         if (chatData.friends.length === 0 && chatData.groups.length === 0) {
             chatButtonsForFriends('add');
             chatButtonsForGroups('add');
-        } else if(chatData.friends.length > 0 && chatData.groups.length > 0) {
+        } else if (chatData.friends.length > 0 && chatData.groups.length > 0) {
             chatButtonsForFriends('buttons');
             chatButtonsForGroups('buttons');
-        } else if(chatData.friends.length === 0 && chatData.groups.length > 0) {
+        } else if (chatData.friends.length === 0 && chatData.groups.length > 0) {
             chatButtonsForGroups('buttons');
             chatButtonsForFriends('add');
-        } else if(chatData.friends.length > 0 && chatData.groups.length === 0) {
+        } else if (chatData.friends.length > 0 && chatData.groups.length === 0) {
             chatButtonsForFriends('buttons');
             chatButtonsForGroups('add');
         }
@@ -41,7 +42,7 @@ function renderChatData() {
 
         catchCounter++;
 
-        if(catchCounter === 3) {
+        if (catchCounter === 3) {
             renderChatData()
         }
 
@@ -53,7 +54,7 @@ renderChatData();
 
 //this function pushes the buttons for groups
 function chatButtonsForGroups(type) {
-    if(type === 'add') {
+    if (type === 'add') {
         groupsArr.push(
             <button onClick={renderAddGroups} className='addFriendsGroups'>Create or join groups</button>
         );
@@ -65,11 +66,11 @@ function chatButtonsForGroups(type) {
                 </p>
             );
         }
-        
+
         groupsArr.push(
             <>
                 <br />
-                
+
                 <button onClick={renderAddGroups} className='addFriendsGroups'>Create or join groups</button>
             </>
         );
@@ -78,7 +79,7 @@ function chatButtonsForGroups(type) {
 
 //this function pushes the button for friends
 function chatButtonsForFriends(type) {
-    if(type === 'add') {
+    if (type === 'add') {
         friendsArr.push(
             <button onClick={renderAddFriends} className='addFriendsGroups'>add friends</button>
         );
@@ -92,7 +93,7 @@ function chatButtonsForFriends(type) {
         }
 
         friendsArr.push(
-            <> 
+            <>
                 <br />
 
                 <button onClick={renderAddFriends} className='addFriendsGroups'>add friends</button>
@@ -116,36 +117,41 @@ function renderAddFriends() {
 }
 
 //homepage
-class Homepage extends React.Component {
+export default class Homepage extends React.Component {
     render() {
         return (
-            <table>
-                <tbody>
-                    <tr>
-                        <td className='navBarTd'>
-                            <Scrollbars style={{ width: "100%", height: "100%"}}>
-                                <div className='navBar' id='navBar'>
-                                    <h2>Chat with: </h2>
+            <>
+                <TopBar />
 
-                                    <div className='friendsContainer' id='friendsContainer'>
-                                        { friendsArr }
+                <table>
+                    <tbody>
+                        <tr>
+                            <td className='navBarTd'>
+                                <Scrollbars style={{ width: "100%", height: "100%" }}>
+                                    <div className='navBar' id='navBar'>
+                                        <h2>Chat with: </h2>
+
+                                        <div className='friendsContainer' id='friendsContainer'>
+                                            {friendsArr}
+                                        </div>
+
+                                        <h2>Chat in: </h2>
+
+                                        <div className='groupsContainer' id='groupsContainer'>
+                                            {groupsArr}
+                                        </div>
                                     </div>
+                                </Scrollbars>
+                            </td>
 
-                                    <h2>Chat in: </h2>
+                            <td className='renderTd'>
 
-                                    <div className='groupsContainer' id='groupsContainer'>
-                                        { groupsArr }
-                                    </div>
-                                </div>
-                            </Scrollbars>
-                        </td>
-
-                        <td className='renderTd'>{ this.props.frame }</td>
-                    </tr>
-                </tbody>
-            </table>
+                                {this.props.frame}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </>
         );
     }
 }
-
-export default Homepage;

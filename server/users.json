@@ -3,12 +3,10 @@
     {
       "username": "rushabh",
       "password": "000",
-      "friends": [
-          "amma",
-          "rushabh"
-      ],
-      "groups": [
-      ]
+      "friends": [],
+      "groups": [],
+      "incomingRequests": [],
+      "sentRequest": []
     }
   ]
 }

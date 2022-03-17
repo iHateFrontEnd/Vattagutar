@@ -25,7 +25,7 @@ p:hover {
     width: 188vh;
     margin-left: 2vh;
     border-style: none;
-    height: 90vh;
+    height: 70vh;
 }
 
 .concInfoInps {
@@ -94,7 +94,6 @@ p:hover {
 
 /* homepage */
 table {
-    margin-top: 2vh;
     margin-bottom: 2vh;
     margin-left: 2vh;
     margin-right: 2vh;
@@ -166,6 +165,33 @@ h2 {
     text-align: center;
 }
 
+.topBar {
+    background-color: #350BBD;
+    border-radius: 2vh;
+    height: 12vh;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 3vh;
+    margin-right: 3vh;
+}
+
+.topBarBtns {
+    margin-left: 3vh;
+    margin-right: 3vh;
+    background-color: white;
+    height: 7vh;
+    color: #350BBD;
+    font-family: 'poppins', sans-serif;
+    font-size: 4vh;
+    border-radius: 3vh;
+    border-style: none;
+    width: 55vh;
+    text-align: center;
+}
+
 h3 {
     font-family: 'poppins', sans-serif;
     font-size: 10vh;
@@ -175,7 +201,6 @@ h3 {
 /*add-friend*/
 .addFriend {
     text-align: center;
-
 }
 
 /*join group*/
