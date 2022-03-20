@@ -11,7 +11,7 @@ var user = JSON.parse(localStorage.getItem('user'));
 async function saveNewUsername() {
     const username = document.getElementById('username').value;
 
-    if(username != '') {
+    if (username != '') {
         //saving username in users.json
         const options = {
             method: 'POST',
@@ -19,18 +19,18 @@ async function saveNewUsername() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                username:username,
+                username: username,
                 userIndex: user.userIndex
             })
         }
 
         await fetch(`${configFile.serverURL}/change-username`, options);
-       
+
         //saving in localStorage
         user.username = username;
-        
+
         localStorage.setItem('user', JSON.stringify(user));
-        
+
         await window.location.reload();
     } else {
         alert('Please enter a proper username');
@@ -41,7 +41,7 @@ async function saveNewPassword() {
     const password = document.getElementById('password').value;
 
     //saving password in users.json
-    if(password != '') {
+    if (password != '') {
         const options = {
             method: 'POST',
             headers: {
@@ -54,7 +54,7 @@ async function saveNewPassword() {
         }
 
         await fetch(`${configFile.serverURL}/change-password`, options);
-        
+
         //saving in localStorage
         user.password = password;
 

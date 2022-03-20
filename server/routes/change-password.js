@@ -8,9 +8,9 @@ router.post('/', (req, res) => {
     const userIndex = req.body.userIndex;
 
     usersFile.users[userIndex].password = password;
-    
+
     fs.writeFile('./users.json', JSON.stringify(usersFile, null, 2), (err) => {
-        if(err) {
+        if (err) {
             console.log(err);
         }
     });

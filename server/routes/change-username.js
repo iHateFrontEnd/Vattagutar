@@ -10,12 +10,13 @@ router.post('/', (req, res) => {
     usersFile.users[userIndex].username = username;
 
     fs.writeFile('./users.json', JSON.stringify(usersFile, null, 2), (err) => {
-        if(err) {
+        if (err) {
             console.log(err);
         }
     })
 
     res.end();
+
 });
 
 module.exports = router;

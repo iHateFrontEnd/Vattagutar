@@ -40,6 +40,7 @@ app.use('/friend-request', friendRequest);
 //join group
 app.use('/join-group', joinGroup);
 
+
 //creates a group
 app.use('/create-group', createGroup);
 
