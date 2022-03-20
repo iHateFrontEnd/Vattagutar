@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import Homepage from '../homepage/Homepage';
 import Logo from '../homepage/Logo';
 import Login from '../login/Login';
+import IncomingRequests from '../../pages/IncomingRequests'; 
 
 function renderProfile() {
-
+    ReactDOM.render(
+        <IncomingRequests />, document.getElementById('root')
+    );
 }
 
 function renderRequests() {
-
+    
 }
 
 function signOut() {

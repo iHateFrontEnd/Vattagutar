@@ -213,3 +213,50 @@ h3 {
     text-align: center;
     scrollbar-width: normal;
 }
+
+/*incoming requests*/
+.incomingRequests {
+    background-image: linear-gradient(to left, #0b1dbd, #350BBD);
+    text-align: center;
+    padding-top: 5vh;
+    margin-top: 5vh;
+    margin-right: 30vh;
+    margin-left: 30vh;
+    padding-bottom: 5vh;
+    border-radius: 7vh;
+    border-style: none;
+}
+
+.newUserData {
+    height: 13vh;
+    width: 70vh;
+    background-color: black;
+    color: white;
+    font-family: 'poppins', sans-serif;
+    font-size: 4vh;
+    border-radius: 3vh;
+    border-style: none;
+    text-align: center;
+
+}
+
+.saveNewDataBtn {
+    height: 13vh;
+    width: 50vh;
+    border-radius: 3vh;
+    border-style: none;
+    background-color: #0cdd7c;
+    font-family: "poppins", sans-serif;
+    font-size: 3vh;
+    margin-left: 2vh;
+}
+
+.editUserData {
+    background-color: white;
+    margin-left: 10vh;
+    margin-right: 10vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    border-radius: 4vh;
+    border-style: none;
+}

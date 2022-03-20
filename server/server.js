@@ -20,6 +20,8 @@ const loadChatData = require('./routes/load-chat-data');
 const friendRequest = require('./routes/add-friend');
 const joinGroup = require('./routes/join-group');
 const createGroup = require('./routes/create-group');
+const changeUsername = require('./routes/change-username');
+const changePassword = require('./routes/change-password');
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
@@ -41,4 +43,11 @@ app.use('/join-group', joinGroup);
 //creates a group
 app.use('/create-group', createGroup);
 
+//changing username
+app.use('/change-username', changeUsername);
+
+//changin password 
+app.use('/change-password', changePassword);
+
 app.listen(4000);
+
