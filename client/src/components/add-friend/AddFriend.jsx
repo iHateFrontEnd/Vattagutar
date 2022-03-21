@@ -8,38 +8,38 @@ import '../../App.css';
 //sending friend request data to server
 async function sendFriendRequest() {
     const friendsUsername = document.getElementById('friendsUsername').value;
+    const user = JSON.parse(localStorage.getItem('user'));
 
-    if (friendsUsername != '') {
-        let user = JSON.parse(localStorage.getItem('user'));
-
+    if (friendsUsername === user.username) {
+        alert('Please enter your friends username not yours');
+    } else if (friendsUsername === '') {
+        alert('Please enter a proper username');
+    } else {
         const options = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
+                userIndex: user.userIndex,
                 fUsername: friendsUsername,
-                userIndex: user.userIndex
+                username: user.username
             })
         }
 
         const res = await fetch(`${configFile.serverURL}/friend-request`, options);
-        const isRequestSent = await res.json();
+        const data = await res.json();
 
-        if (isRequestSent === true) {
-            alert('Request was sent');
-
-            ReactDOM.render(
-                <Homepage frame={Logo} />, document.getElementById('root')
-            );
+        if (data.status === 'success') {
+            alert('Request was sent!');
         } else {
-            alert(`There is no such user name ${friendsUsername}, please try again with a proper username`);
+            alert(`Try again with a proper username, user ${friendsUsername} does not exits :(`);
         }
-    } else {
-        alert('Please enter a proper username');
-    }
-}
 
+        console.log(data);
+    }
+
+}
 
 const AddFriend = (
     <div className='addFriend' id='addFriend'>

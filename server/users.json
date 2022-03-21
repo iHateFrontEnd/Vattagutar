@@ -2,7 +2,15 @@
   "users": [
     {
       "username": "rushabh",
-      "password": "sdfg",
+      "password": "000",
+      "friends": [],
+      "groups": [],
+      "incomingRequests": [],
+      "sentRequest": []
+    },
+    {
+      "username": "test",
+      "password": "111",
       "friends": [],
       "groups": [],
       "incomingRequests": [],

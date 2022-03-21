@@ -1,14 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const configFile = require('../config.json');
-const usersFile = require('../users.json');
+var configFile = require('../config.json');
+var usersFile = require('../users.json');
 const fs = require('fs');
 
 router.post('/', (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
 
-    const userLayout = configFile.userLayout;
+    var userLayout = configFile.userLayout;
+
+    userLayout.username = username;
+    userLayout.password = password;
 
     usersFile.users.push(userLayout);
 
