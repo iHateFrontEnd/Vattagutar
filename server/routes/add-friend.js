@@ -5,6 +5,7 @@ const fs = require('fs');
 
 router.post('/', (req, res) => {
     //f refers to friend        
+<<<<<<< HEAD
 
     const userIndex = parseInt(req.body.userIndex);
     const fUsername = req.body.fUsername;
@@ -13,6 +14,20 @@ router.post('/', (req, res) => {
 
     //checking if friend exists
     for (let i = 0; i <= usersFile.users.length - 1; i++) {
+=======
+    const userIndex = parseInt(req.body.userIndex);
+    const fUsername = req.body.fUsername;
+    
+    const username = usersFile.users[userIndex].username;
+    
+    var fUserFound = false;
+    var fUserIndex = -1;
+
+    //checking if friend exists
+    for (let i = 0; i <= usersFile.users.length - 1; i++) {
+        fUserIndex++;
+
+>>>>>>> 1f0486b (Add friend is fixed)
         if (usersFile.users[i].username == fUsername) {
             fUserFound = true;
             break;
@@ -20,7 +35,14 @@ router.post('/', (req, res) => {
     }
 
     if (fUserFound == true) {
+<<<<<<< HEAD
         //pass
+=======
+        res.json({
+            status: 'success',
+            serverStatus: 200
+        });
+>>>>>>> 1f0486b (Add friend is fixed)
     } else {
         res.json({
             status: 'failed',
@@ -28,10 +50,22 @@ router.post('/', (req, res) => {
         });
     }
 
+<<<<<<< HEAD
     //writing to incoming requests
     usersFile.users[userIndex].incomingRequests.push(fUsername);
 
     fs.writeFile('../users.json', JSON.stringify(usersFile, null, 2), (err) => {
+=======
+    console.log(fUserIndex);
+
+    //writing to incoming requests
+    usersFile.users[userIndex].sentRequest.push(fUsername);
+
+    //writing to sent requests
+    usersFile.users[fUserIndex].incomingRequests.push(username);
+
+    fs.writeFile('./users.json', JSON.stringify(usersFile, null, 2), (err) => {
+>>>>>>> 1f0486b (Add friend is fixed)
         if (err) {
             console.log(err);
         }

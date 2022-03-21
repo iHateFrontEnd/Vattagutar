@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+<<<<<<< HEAD
 import userLogo from '../assets/user-icon.png';
 import Homepage from '../components/homepage/Homepage'
 import Logo from '../components/homepage/Logo';
@@ -111,7 +112,52 @@ export default class IncomingRequests extends React.Component {
                 <br />
 
                 <button className='loginBtn' onClick={renderHomepage}>Home</button>
+=======
+import Logo from '../components/homepage/Logo';
+import Homepage from '../components/homepage/Homepage';
+import configFile from '../config.json';
+import '../App.css';
+
+var friendRequestsArr = [];
+
+const user = JSON.parse(localStorage.getItem('user'));
+
+class IncomingRequests extends React.Component {
+    render() {
+        return (
+            <div className='friendRequests' id='friendRequests'>
+                { this.props.friendRequests }
+>>>>>>> 1f0486b (Add friend is fixed)
             </div>
         );
     }
 }
+<<<<<<< HEAD
+=======
+
+export default async function friendRequests() {
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            userIndex: user.userIndex
+        })
+    }
+
+    const res = await fetch(`${configFile.serverURL}/load-friend-requests`, options);
+    const friendRequests = await res.json();
+
+    if(friendRequests.requests.length === 0) {
+        friendRequestsArr.push(
+            <h4>Make some friends</h4>
+        );
+    } else {
+    }
+
+    ReactDOM.render(
+        <IncomingRequests friendRequests={friendRequestsArr} />, document.getElementById('root')
+    );
+}
+>>>>>>> 1f0486b (Add friend is fixed)

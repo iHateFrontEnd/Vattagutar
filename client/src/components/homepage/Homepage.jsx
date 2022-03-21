@@ -154,4 +154,8 @@ export default class Homepage extends React.Component {
             </>
         );
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 1f0486b (Add friend is fixed)

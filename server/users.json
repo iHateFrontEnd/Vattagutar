@@ -2,6 +2,7 @@
   "users": [
     {
       "username": "rushabh",
+<<<<<<< HEAD
       "password": "sdfg",
       "friends": [],
       "groups": [],
@@ -10,3 +11,24 @@
     }
   ]
 }
+=======
+      "password": "000",
+      "friends": [],
+      "groups": [],
+      "incomingRequests": [
+      ],
+      "sentRequest": [
+      ]
+    },
+    {
+      "username": "test",
+      "password": "test",
+      "friends": [],
+      "groups": [],
+      "incomingRequests": [
+       ],
+      "sentRequest": []
+    }
+  ]
+}
+>>>>>>> 1f0486b (Add friend is fixed)
