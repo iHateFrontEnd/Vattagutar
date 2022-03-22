@@ -2,6 +2,7 @@
   "users": [
     {
       "username": "rushabh",
+<<<<<<< HEAD
       "password": "000",
       "friends": [],
       "groups": [],
@@ -11,6 +12,10 @@
     {
       "username": "test",
       "password": "111",
+=======
+<<<<<<< HEAD
+      "password": "sdfg",
+>>>>>>> 3d539de087c5b4347d2ec18afa2aebdf9b3da023
       "friends": [],
       "groups": [],
       "incomingRequests": [],
@@ -18,3 +23,24 @@
     }
   ]
 }
+=======
+      "password": "000",
+      "friends": [],
+      "groups": [],
+      "incomingRequests": [
+      ],
+      "sentRequest": [
+      ]
+    },
+    {
+      "username": "test",
+      "password": "test",
+      "friends": [],
+      "groups": [],
+      "incomingRequests": [
+       ],
+      "sentRequest": []
+    }
+  ]
+}
+>>>>>>> 1f0486b (Add friend is fixed)

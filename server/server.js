@@ -22,6 +22,10 @@ const joinGroup = require('./routes/join-group');
 const createGroup = require('./routes/create-group');
 const changeUsername = require('./routes/change-username');
 const changePassword = require('./routes/change-password');
+<<<<<<< HEAD
+=======
+const loadFriendRequests = require('./routes/load-friend-requests'); 
+>>>>>>> 1f0486b (Add friend is fixed)
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
@@ -40,6 +44,10 @@ app.use('/friend-request', friendRequest);
 //join group
 app.use('/join-group', joinGroup);
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1f0486b (Add friend is fixed)
 //creates a group
 app.use('/create-group', createGroup);
 
@@ -49,5 +57,11 @@ app.use('/change-username', changeUsername);
 //changin password 
 app.use('/change-password', changePassword);
 
+<<<<<<< HEAD
+=======
+//load friend requests
+app.use('/load-friend-requests', loadFriendRequests);
+
+>>>>>>> 1f0486b (Add friend is fixed)
 app.listen(4000);
 

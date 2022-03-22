@@ -19,6 +19,13 @@ p:hover {
     font-size: 4vh;
 }
 
+<<<<<<< HEAD
+=======
+h4 {
+    color: orange;
+}
+
+>>>>>>> 1f0486b (Add friend is fixed)
 .renderTd {
     background-image: linear-gradient(to left,  #340BB9, #3F0DDC);
     border-radius: 5vh;
@@ -95,10 +102,19 @@ p:hover {
 /* homepage */
 table {
     margin-bottom: 2vh;
+<<<<<<< HEAD
     margin-left: 2vh;
     margin-right: 2vh;
 }
 
+=======
+    width: 100%;
+    margin-left: 3vh;
+    margin-right: 3vh;
+}
+
+
+>>>>>>> 1f0486b (Add friend is fixed)
 .navBarTd {
     background-image: linear-gradient(to left, #3F0DDC, #340BB9);
     height: 90vh;

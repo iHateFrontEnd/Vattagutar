@@ -32,10 +32,13 @@ function signUp() {
     }
 }
 
+<<<<<<< HEAD
 const loginURL = `${configFile.serverURL}/login`;
 
 console.log(loginURL);
 
+=======
+>>>>>>> 1f0486b (Add friend is fixed)
 class SignUp extends React.Component {
     render() {
         return (
