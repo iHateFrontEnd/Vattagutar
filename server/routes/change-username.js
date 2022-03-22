@@ -13,10 +13,9 @@ router.post('/', (req, res) => {
         if (err) {
             console.log(err);
         }
-    })
+    });
 
     res.end();
-
 });
 
 module.exports = router;

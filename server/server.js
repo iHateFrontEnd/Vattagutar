@@ -1,10 +1,6 @@
 const express = require('express');
-const router = express.Router();
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const fs = require('fs');
-var usersFile = require('./users.json');
-var groupsFile = require('./groups.json');
 const app = express();
 app.use(express.json());
 app.use(
@@ -22,10 +18,9 @@ const joinGroup = require('./routes/join-group');
 const createGroup = require('./routes/create-group');
 const changeUsername = require('./routes/change-username');
 const changePassword = require('./routes/change-password');
-<<<<<<< HEAD
-=======
-const loadFriendRequests = require('./routes/load-friend-requests'); 
->>>>>>> 1f0486b (Add friend is fixed)
+const loadFriendRequests = require('./routes/load-friend-requests');
+const acceptRequest = require('./routes/accept-request');
+const declineRequest = require('./routes/decline-request');
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
@@ -44,24 +39,22 @@ app.use('/friend-request', friendRequest);
 //join group
 app.use('/join-group', joinGroup);
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 1f0486b (Add friend is fixed)
 //creates a group
 app.use('/create-group', createGroup);
 
 //changing username
 app.use('/change-username', changeUsername);
 
-//changin password 
+//changing password 
 app.use('/change-password', changePassword);
 
-<<<<<<< HEAD
-=======
-//load friend requests
+//loading friend requests
 app.use('/load-friend-requests', loadFriendRequests);
 
->>>>>>> 1f0486b (Add friend is fixed)
+//accepting a friend request
+app.use('/accept-request', acceptRequest);
+
+app.use('/decline-request', declineRequest);
+
 app.listen(4000);
 
