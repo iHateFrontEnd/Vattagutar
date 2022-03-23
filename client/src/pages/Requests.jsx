@@ -108,7 +108,7 @@ export default async function loadFriendRequests() {
 
                     <button onClick={() => acceptRequest(i, data.requests[i])} className='accept'>✓</button>
 
-                    <button onClick={() => declineRequest(i)} className='decline'>x</button>
+                    <button onClick={() => declineRequest(i)} className='decline'>X</button>
                 </div>
 
                 <br />

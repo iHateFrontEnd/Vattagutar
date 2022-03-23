@@ -4,7 +4,9 @@
       "username": "rushabh",
       "password": "000",
       "friends": [],
-      "groups": [],
+      "groups": [
+        "new group"
+      ],
       "incomingRequests": [],
       "sentRequest": []
     },
