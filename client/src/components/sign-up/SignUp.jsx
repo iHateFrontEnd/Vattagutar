@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configFile from '../../config.json';
 import Login from '../login/Login';
-import '../../App.css';
+import './SignUp.css';
 
 //sending user data to save user
 function signUp() {
@@ -10,7 +10,7 @@ function signUp() {
     const enterPwd = document.getElementById('enterPwd').value;
     const confirmPwd = document.getElementById('confirmPwd').value;
 
-    if(username != '' && enterPwd === confirmPwd && enterPwd != '') {
+    if (username != '' && enterPwd === confirmPwd && enterPwd != '') {
         const options = {
             method: 'POST',
             headers: {
@@ -21,7 +21,7 @@ function signUp() {
                 password: enterPwd
             })
         }
-    
+
         fetch(`${configFile.serverURL}/sign-up`, options);
 
         ReactDOM.render(
@@ -40,7 +40,7 @@ class SignUp extends React.Component {
     render() {
         return (
             <div className='signUp' id='signUp'>
-                <h1>Enter your new username and password</h1> 
+                <h1>Enter your new username and password</h1>
 
                 <input type='text' id='username' className='concInfoInps' placeholder='Enter your new username' autoFocus required />
 

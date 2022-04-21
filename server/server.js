@@ -1,13 +1,29 @@
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser');
 const app = express();
+const http = require('http').createServer(app);
+const io = require('socket.io')(http, {
+  cors: {
+    origin: { origin: "*" }
+  }
+});
 app.use(express.json());
 app.use(
-    cors({
-        origin: 'http://localhost:3000'
-    })
+  cors({
+    origin: "*"
+  })
 );
+
+//websocket
+io.on('connection', function (socket) {
+  socket.on('update-message', function (groupName) {
+    const group = require(`./groups/${groupName}.json`);
+
+    const chat = group.chat;
+
+    socket.emit('chat', chat);
+  });
+});
 
 //importing routes
 const loginRoute = require('./routes/login');
@@ -21,8 +37,17 @@ const changePassword = require('./routes/change-password');
 const loadFriendRequests = require('./routes/load-friend-requests');
 const acceptRequest = require('./routes/accept-request');
 const declineRequest = require('./routes/decline-request');
+const saveGroupChat = require('./routes/save-group-chat');
+const reloadChat = require('./routes/reload-chat');
+const addPerson = require('./routes/add-person');
+const loadGroups = require('./routes/load-groups');
 
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
+app.get('/', (req, res) => {
+  res.send('Hello world');
+});
+
+//sending the latest msg to clients connected to server
+app.use('/reload-chat', reloadChat);
 
 //loggin in a user
 app.use('/login', loginRoute);
@@ -54,7 +79,16 @@ app.use('/load-friend-requests', loadFriendRequests);
 //accepting a friend request
 app.use('/accept-request', acceptRequest);
 
+//declining a request
 app.use('/decline-request', declineRequest);
 
-app.listen(4000);
+//saving group chat to a .json file
+app.use('/save-group-chat', saveGroupChat);
 
+//adding people to a group
+app.use('/add-person', addPerson);
+
+//loading groups
+app.use('/load-groups', loadGroups);
+
+http.listen(4000);

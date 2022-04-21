@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import userLogo from '../assets/user-icon.png';
-import Homepage from '../components/homepage/Homepage'
-import Logo from '../components/homepage/Logo';
-import configFile from '../config.json';
-import '../App.css';
+import userLogo from '../../assets/user-icon.png';
+import Homepage from '../../components/homepage/Homepage'
+import Logo from '../../components/homepage/Logo';
+import configFile from '../../config.json';
+import './Profile.css';
 
 var user = JSON.parse(localStorage.getItem('user'));
 

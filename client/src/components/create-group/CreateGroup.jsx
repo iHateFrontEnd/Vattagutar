@@ -11,6 +11,7 @@ async function saveGroup() {
     //posting data to server to create group 
     var user = JSON.parse(localStorage.getItem('user'));
     const groupName = document.getElementById('groupName').value;
+    const trimedGroupName = groupName.replaceAll(' ', '-');
 
     const options = {
         method: 'POST',
@@ -18,7 +19,7 @@ async function saveGroup() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            groupName: groupName,
+            groupName: trimedGroupName,
             userIndex: user.userIndex,
             username: user.username
         })

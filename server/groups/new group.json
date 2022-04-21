@@ -5,5 +5,12 @@
   "requestedUsers": [
     "test"
   ],
-  "chat": []
+  "chat": [
+    {
+      "rushabh": "a"
+    },
+    {
+      "rushabh": "ttt"
+    }
+  ]
 }

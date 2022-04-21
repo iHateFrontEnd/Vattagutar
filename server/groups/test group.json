@@ -1,5 +1,12 @@
 {
   "permittedUsers": [],
   "requestedUsers": [],
-  "chat": []
+  "chat": [
+    {
+      "rushabh": "rushabh"
+    },
+    {
+      "rushabh": "sdf"
+    }
+  ]
 }

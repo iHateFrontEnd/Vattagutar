@@ -1,0 +1,29 @@
+{
+  "permittedUsers": [
+    "rushabh",
+    "amma",
+    "amma",
+    "test"
+  ],
+  "requestedUsers": [],
+  "chat": [
+    {
+      "rushabh": "ksjdfkjsfdh"
+    },
+    {
+      "test": "sdfasdf"
+    },
+    {
+      "rushabh": "asdf"
+    },
+    {
+      "rushabh": "asdf"
+    },
+    {
+      "rushabh": "sdlfkjalskdjf"
+    },
+    {
+      "rushabh": "sdlfkjalskdjf"
+    }
+  ]
+}

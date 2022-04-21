@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import configFile from '../config.json';
-import Homepage from '../components/homepage/Homepage';
-import Logo from '../components/homepage/Logo';
-import '../App.css';
+import configFile from '../../config.json';
+import Homepage from '../../components/homepage/Homepage';
+import Logo from '../../components/homepage/Logo';
+import './Requests.css';
 
 var friendRequestsArr = [];
 

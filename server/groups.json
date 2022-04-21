@@ -1,6 +1,7 @@
 {
   "groups": [
-    "test group",
-    "new group"
+    "group",
+    "test-group",
+    "this-is-the-new-group"
   ]
 }

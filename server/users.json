@@ -3,28 +3,51 @@
     {
       "username": "rushabh",
       "password": "000",
-      "friends": [],
+      "friends": [
+        "amma"
+      ],
       "groups": [
-        "new group"
+        "group",
+        "test-group",
+        "this-is-the-new-group"
       ],
       "incomingRequests": [],
-      "sentRequest": []
+      "sentRequest": [
+        "test",
+        "test",
+        "test"
+      ]
     },
     {
       "username": "test",
       "password": "111",
-      "friends": [],
-      "groups": [],
-      "incomingRequests": [],
-      "sentRequest": []
+      "friends": [
+        "rushabh"
+      ],
+      "groups": [
+        "group",
+        "test-group"
+      ],
+      "incomingRequests": [
+        "rushabh",
+        "rushabh"
+      ],
+      "sentRequest": [
+        "rushabh",
+        "rushabh"
+      ]
     },
     {
       "username": "amma",
       "password": "amma",
       "friends": [],
-      "groups": [],
+      "groups": [
+        "group"
+      ],
       "incomingRequests": [],
-      "sentRequest": []
+      "sentRequest": [
+        "rushabh"
+      ]
     }
   ]
 }

@@ -1,15 +1,24 @@
 const express = require('express');
 const router = express.Router();
 
-router.post('/load-chat-data', (req, res) => {
-    const userIndex = req.body.userIndex;
+function loadGroupChat(groupName, res) {
+    let groupFile = require(`../groups/${groupName}.json`);
 
-    const response = {
-        groups: usersFile.users[userIndex].groups,
-        friends: usersFile.users[userIndex].friends
+    res.send({
+        permittedUsers: groupFile.permittedUsers,
+        requestedUsers: groupFile.requestedUsers,
+        chat: groupFile.chat,
+        groupName: groupName
+    });
+}
+
+router.post('/', (req, res) => {
+    if (req.body.toLoad == 'group') {
+
+        loadGroupChat(req.body.groupName, res);
+    } else {
+        // loadPersonalChat();
     }
-
-    res.send(response);
 });
 
 module.exports = router;

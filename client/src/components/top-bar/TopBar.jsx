@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import Homepage from '../homepage/Homepage';
 import Logo from '../homepage/Logo';
 import Login from '../login/Login';
-import Profile from '../../pages/Profile';
-import loadFriendRequests from '../../pages/Requests';
+import Profile from '../../pages/profile/Profile';
+import loadFriendRequests from '../../pages/requests/Requests';
+import './TopBar.css';
 
 function renderProfile() {
     ReactDOM.render(

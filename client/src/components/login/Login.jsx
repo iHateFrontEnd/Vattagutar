@@ -4,7 +4,7 @@ import configFile from '../../config.json';
 import SignUp from '../sign-up/SignUp';
 import Homepage from '../homepage/Homepage';
 import Logo from '../homepage/Logo';
-import '../../App.css';
+import './Login.css';
 
 //sending username and password to server
 async function login() {
@@ -25,7 +25,7 @@ async function login() {
     const res = await fetch(`${configFile.serverURL}/login`, options);
     const userData = await res.json();
 
-    if(userData.status != 'failed') {
+    if (userData.status != 'failed') {
         //saving user data to local storage
         console.log('saving user data');
         localStorage.setItem('user', JSON.stringify({

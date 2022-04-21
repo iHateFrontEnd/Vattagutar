@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
     //create a group file in /groups
     configFile.groupChatLayout.permittedUsers.push(username);
 
-    fs.writeFile(`../server/groups/${groupName}.json`, JSON.stringify(configFile.groupChatLayout, null, 2), (err) => {
+    fs.writeFile(`./groups/${groupName}.json`, JSON.stringify(configFile.groupChatLayout, null, 2), (err) => {
         if (err) {
             console.log(err);
         }
