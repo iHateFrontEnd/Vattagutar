@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+p {
+    color: black;
+    font-size: 3vh;
+    font-family: 'poppins', sans-serif;
+}
+
+p:hover {
+    color: black;
+    font-size: 3vh;
+    font-family: 'poppins', sans-serif;
+}
+
+.chat {
+    background-color: white;
+    height: 62vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+    border-radius: 3vh;
+    overflow: scroll;
+    border-style: none;
+}
+
+.personsUsername {
+    height: 10vh;
+    outline: none;
+    width: 80vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 4vh;
+    text-align: center;
+    border-radius: 2vh;
+    background-color: black;
+    border-style: solid;
+    color: white;
+}
+
+.addPeople {
+    text-align: center;
+    background-color: white;
+    height: 80vh;
+    margin-left: 4vh;
+    margin-right: 4vh;
+    margin-bottom: 4vh;
+    margin-top: 4vh;
+    border-radius: 4vh;
+    border-style: none;
+}
+
+.heading2 {
+    color: black;
+    padding-top: 20vh;
+}
+
+.enterMsg {
+    border-radius: 3vh;
+    background-color: black;
+    margin-bottom: -10vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+    margin-top: 2vh;
+    height: 10vh;
+}
+
+.msg {
+    background-color: white;
+    width: 90%;
+    height: 10vh;
+    text-align: center;
+    border-style: none;
+    border-top-left-radius: 2vh;
+    outline: none;
+    border-bottom-left-radius: 2vh;
+    font-family: 'poppins', sans-serif;
+    font-size: 4vh;
+}
+
+.sendMsg {
+    background-color: black;
+    font-family: 'poppins', sans-serif;
+    color: white;
+    outline: none;
+    font-size: 4vh;
+    height: 10.5vh;
+    width: 9.5%;
+    border-bottom-right-radius: 2vh;
+    border-top-right-radius: 2vh;
+    border-style: none;
+}

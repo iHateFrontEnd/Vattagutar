@@ -1,0 +1,45 @@
+.chat {
+    background-color: white;
+    height: 62vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+    border-radius: 3vh;
+    overflow: scroll;
+    border-style: none;
+}
+
+.enterMsg {
+    border-radius: 3vh;
+    background-color: black;
+    margin-bottom: -10vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+    margin-top: 2vh;
+    height: 10vh;
+}
+
+.msg {
+    background-color: white;
+    width: 90%;
+    height: 10vh;
+    text-align: center;
+    border-style: none;
+    border-top-left-radius: 2vh;
+    outline: none;
+    border-bottom-left-radius: 2vh;
+    font-family: 'poppins', sans-serif;
+    font-size: 4vh;
+}
+
+.sendMsg {
+    background-color: black;
+    font-family: 'poppins', sans-serif;
+    color: white;
+    outline: none;
+    font-size: 4vh;
+    height: 10.5vh;
+    width: 9.5%;
+    border-bottom-right-radius: 2vh;
+    border-top-right-radius: 2vh;
+    border-style: none;
+}

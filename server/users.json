@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "username": "rushabh",
+      "password": "000",
+      "friends": [
+        {
+          "username": "fox",
+          "chatFile": "fox&rushabh.json"
+        },
+        {
+          "username": "rama",
+          "chatFile": "rushabh&rama.json"
+        }
+      ],
+      "groups": [
+        "Rushabh's-group"
+      ],
+      "incomingRequests": [],
+      "sentRequest": []
+    },
+    {
+      "username": "fox",
+      "password": "000",
+      "friends": [
+        {
+          "username": "rushabh",
+          "chatFile": "fox&rushabh.json"
+        }
+      ],
+      "groups": [
+        "rushabh's-group"
+      ],
+      "incomingRequests": [],
+      "sentRequest": []
+    },
+    {
+      "username": "rama",
+      "password": "000",
+      "friends": [
+        {
+          "username": "rushabh",
+          "chatFile": "rushabh&rama.json"
+        }
+      ],
+      "groups": [
+        "anna-cruel",
+        "rushabh"
+      ],
+      "incomingRequests": [],
+      "sentRequest": []
+    },
+    {
+      "username": "hello",
+      "password": "00",
+      "friends": [],
+      "groups": [
+        "Rushabh's-group"
+      ],
+      "incomingRequests": [],
+      "sentRequest": []
+    }
+  ]
+}

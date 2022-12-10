@@ -1,0 +1,22 @@
+{
+    "clientURL": "http://192.168.1.104:3000",
+    "localhostClientURL": "http://192.168.1.104:3000",
+    "dmChatLayout": {
+        "permittedUsers": [],
+        "chat": []
+    },
+    "userLayout": {
+        "username": "",
+        "password": "",
+        "friends": [],
+        "groups": [],
+        "incomingRequests": [],
+        "sentRequests": []
+    },
+    "groupChatLayout": {
+        "groupName": "",
+        "permittedUsers": [],
+        "requestedUsers": [],
+        "chat": []
+    }
+}

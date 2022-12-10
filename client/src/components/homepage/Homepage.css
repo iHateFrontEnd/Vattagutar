@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+.navBarTd {
+    background-image: linear-gradient(to left, #3F0DDC, #340BB9);
+    height: 90vh;
+    width: 25%;
+    border-radius: 5vh;
+    border-style: none;
+}
+
+h2 {
+    font-size: 7vh;
+    color: white;
+    margin-left: 2vh;
+    font-family: 'poppins', sans-serif;
+}
+
+.friendsContainer {
+    margin-left: 2vh;
+}
+
+.groupsContainer {
+    margin-left: 2vh;
+}
+
+.addFriendsGroups {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3vh;
+    height: 10vh;
+    width: 40vh;
+    background-color: #3F0DDC;
+    color: white;
+    border-style: solid;
+    border-color: white;
+    border-radius: 3vh;
+}
+
+.groups {
+    height: 10vh;
+    width: 45vh;
+    border-radius: 30vh;
+    border-style: none;
+    background-color: #350BBD;
+    font-family: "poppins", sans-serif;
+    font-size: 3vh;
+    color: white;
+    border-style: solid;
+    border-color: white;
+}
+
+.friends {
+    height: 10vh;
+    width: 45vh;
+    border-radius: 30vh;
+    border-style: none;
+    background-color: #350BBD;
+    font-family: "poppins", sans-serif;
+    font-size: 3vh;
+    border-style: solid;
+    border-color: white;
+    color: white;
+}

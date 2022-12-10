@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+.login {
+    text-align: center;
+    background-image: linear-gradient(to left, #190667, #4A0FFD);
+    border-radius: 5vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    margin-left: 20vh;
+    margin-right: 20vh;
+    margin-top: 5vh;
+    border-style: none;
+}
+
+.loginBtn {
+    margin-top: 2vh;
+    height: 12vh;
+    width: 75vh;
+    background-color: black;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 4vh;
+    border-radius: 2vh;
+    border-style: none;
+}

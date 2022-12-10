@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+/*globals*/
+.root {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 8vh;
+    color: white;
+}
+
+p {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 4vh;
+}
+
+p:hover {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 4vh;
+}
+
+h4 {
+    color: orange;
+}
+
+.renderTd {
+    background-image: linear-gradient(to left, #340BB9, #3F0DDC);
+    border-radius: 5vh;
+    height: 70vh;
+}
+
+.concInfoInps {
+    height: 10vh;
+    outline: none;
+    width: 80vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 4vh;
+    text-align: center;
+    border-radius: 2vh;
+    border-style: none;
+    color: black;
+    background-color: white;
+}
+
+
+.logo {
+    text-align: center;
+}
+
+
+/*add-friend*/
+.addFriend {
+    text-align: center;
+}
+
+/*join group*/
+.joinGroup {
+    text-align: center;
+}
+
+/*create group*/
+.createGroup {
+    text-align: center;
+    scrollbar-width: normal;
+}

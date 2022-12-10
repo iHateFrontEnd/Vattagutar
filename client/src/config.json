@@ -1,0 +1,4 @@
+{
+  "serverURL": "http://localhost:4000",
+  "websocketServerURL": "http://localhost:5000"
+}

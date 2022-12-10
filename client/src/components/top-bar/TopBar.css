@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+.topBar {
+    background-color: #350BBD;
+    border-radius: 2vh;
+    height: 12vh;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topBarBtns {
+    margin-left: 3vh;
+    margin-right: 3vh;
+    background-color: white;
+    height: 7vh;
+    color: #350BBD;
+    font-family: 'poppins', sans-serif;
+    font-size: 4vh;
+    border-radius: 3vh;
+    border-style: none;
+    width: 55vh;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'poppins', sans-serif;
+    font-size: 10vh;
+    color: white;
+}

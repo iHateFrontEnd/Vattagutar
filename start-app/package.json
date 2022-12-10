@@ -1,0 +1,22 @@
+{
+  "name": "start-app",
+  "version": "1.0.0",
+  "description": "This folder/node app just starts the entire project, and is a backup for the entire app",
+  "main": "server.js",
+  "scripts": {
+    "server": "cd ../server/express && npm start",
+    "wss": "cd ../server/socketio && npm start",
+    "start-app": "nodemon server.js",
+    "client": "cd ../client && npm start",
+    "start": "concurrently \"npm run wss\" \"npm run server\" \"npm run start-app\" \"npm run client\""
+  },
+  "author": "Rushabh.R",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongodb": "^4.7.0",
+    "nodemon": "^2.0.16"
+  }
+}
